@@ -8,13 +8,14 @@ import Default from './components/Default';
 import Details from './components/Details';
 import Cart from './components/Cart';
 import Modal from './components/Modal';
+import Landing from './components/Landing';
 
 
 class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <Navbar />
+        <Landing />
         <Switch>
           <Route path="/" exact component={ProductList}/>
           <Route path="/details" component={Details}/>

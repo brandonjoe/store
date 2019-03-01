@@ -1,0 +1,14 @@
+
+.main{
+    margin: 0;
+    color: white;
+}
+.content{
+ height: 80vh;
+ width: 100%;
+ background-image: url(../landing.png);
+background-size: cover;
+}
+.nav-Link{
+    color: blue !important;
+}
