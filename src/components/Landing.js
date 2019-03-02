@@ -6,17 +6,23 @@ class Landing extends Component {
         return (
             
             <div>
-            <Navbar />
+           
                 <div className={classes.main}>
-                    <div className={classes.content}>
+                
+                <div className={classes.content}>
+                <Navbar />
+                    <div className={classes.container}>
                         <div className={classes.title}>
-                            Welcome to Peaches and Cherries
+                                    Welcome to Lorem Ipsum
+                                </div>
+                                <div className={classes.text}>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae qui magnam unde dignissimos ex fugiat labore
+                                </div>
                         </div>
-                        <div className={classes.text}>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae qui magnam unde dignissimos ex fugiat labore
-                        </div>
+                            
                     </div>
                 </div>
+                
             </div>
         );
     }

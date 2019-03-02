@@ -1,14 +1,51 @@
 
-.main{
-    margin: 0;
-    color: white;
-}
-.content{
- height: 80vh;
+
+.main::after{
+    content:'';
+    position: relative;
+    top: 0;
+    left: 0;
+ height: 70vh;
  width: 100%;
  background-image: url(../landing.png);
 background-size: cover;
+background-repeat: none;
+background-position: center;
+display: block;
+filter: blur(2px);
+-webkit-filter: (2px);
+transition: all 1s;
+z-index: -10;
+-webkit-clip-path: polygon(0 0, 100% 0, 100% 78%, 0% 100%);
+clip-path: polygon(0 0, 100% 0, 100% 78%, 0% 100%);
 }
-.nav-Link{
-    color: blue !important;
+
+.navitem{
+    color: orange !important;
+    opacity: 1;
+}
+.content{
+    position: absolute;
+    filter: blur(0);
+    z-index: 100;
+    color: white;
+    width: 100%;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 30rem;
+   
+}
+.title{
+    font-size: 2.5rem;
+   margin: 1rem;
+   text-align: center;
+}
+.text{
+    font-size: 1.5rem;
+    margin: 2.5rem;
+    text-align: center;
 }
