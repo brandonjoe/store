@@ -1,0 +1,47 @@
+.main{
+    margin-top: 2rem;
+    top: 0;
+    left: 0;
+    height: 60vh;
+    width: 100%;
+    background-image: linear-gradient( 
+        to right bottom,
+        rgba(255,165,0, .5),
+        rgba(255,69,0, .6)),
+        url("../img/landing.jpg");
+    
+    background-size: cover;
+    background-repeat: none;
+    background-position: center;
+    display: block;
+    backface-visibility: hidden;
+    
+    -webkit-clip-path: polygon(0 20%, 100% 0, 100% 80%, 0 100%);
+    clip-path: polygon(0 20%, 100% 0, 100% 80%, 0 100%);
+}
+.container{
+    height: 60vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card{
+    background-color: rgba(255,255,255,.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 13rem;
+    width: 15rem;
+    margin: 2rem;
+}
+.icon{
+    height: 2rem;
+    width: 2rem;
+    background-image: linear-gradient(to right, red, orange);
+    display: inline-block;
+    -webkit-background-clip: text;
+    color: blue;
+    fill: currentColor;
+}
