@@ -1,14 +1,35 @@
 import React from 'react';
 import PaypalExpressBtn from 'react-paypal-express-checkout';
- 
+import Success from './Success.js';
+import { ProductConsumer } from '../../context.js';
+import Product from '../Product.js';
 export default class MyApp extends React.Component {
+    constructor(props){
+        super(props);
+        this.state={
+            pay: {},
+            isComplete: false,
+            address: '1231',
+            name: 'Melinda Joe'
+
+        };
+    }
+
     render() {
-        const onSuccess = (payment) => {
+
+        const onSuccessb = (payment) => {
             // Congratulation, it came here means everything's fine!
                     console.log("The payment was succeeded!", payment);
-                    this.props.clearCart();
-                    this.props.history.push('/');
-            		// You can bind the "payment" object's value to your state or props or whatever here, please see below for sample returned data
+
+                    this.setState({
+                        pay:payment,
+                        isComplete:true
+                    })
+
+                    // this.props.clearCart();
+                    // this.props.history.push('/');
+                    // You can bind the "payment" object's value to your state or props or whatever here, please see below for sample returned data
+
         }
  
         const onCancel = (data) => {
@@ -40,8 +61,24 @@ export default class MyApp extends React.Component {
         //   => https://developer.paypal.com/docs/classic/lifecycle/goingLive/
  
         // NB. You can also have many Paypal express checkout buttons on page, just pass in the correct amount and they will work!
-        return (
-            <PaypalExpressBtn env={env} client={client} currency={currency} total={this.props.total} onError={onError} onSuccess={onSuccess} onCancel={onCancel} />
-        );
+        if(this.state.isComplete === false) {return (
+            <PaypalExpressBtn env={env} client={client} currency={currency} total={this.props.total} onError={onError} onSuccess={onSuccessb} onCancel={onCancel} />
+   
+        )} else {
+            return (
+                <ProductConsumer>
+                    {value => {
+                        const {cart} = value;
+
+                        // address={this.state.pay.address.city}
+                        return( <Success  total={this.props.total} name={this.state.name} carty={cart}/>)
+                       
+                    }}
+                    
+                   
+                </ProductConsumer>
+            
+            )
+        }
     }
 }

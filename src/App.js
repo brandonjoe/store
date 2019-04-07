@@ -6,27 +6,29 @@ import ProductList from './components/ProductList';
 import Default from './components/Default';
 import Details from './components/Details';
 import Cart from './components/Cart';
-import Modal from './components/Modal';
-import Landing from './components/Landing';
-import About from './components/About';
-import Features from './components/Features';
-
-
+import Allstuff from './components/Allstuff';
+import Listonly from './components/Listonly';
+import { StickyContainer, Sticky } from 'react-sticky';
 class App extends Component {
   render() {
     return (
+
       <React.Fragment>
-        <Landing />
-        <About />
-        <Features />
+        
         <Switch>
-          <Route path="/" exact component={ProductList}/>
+          <Route path="/" exact component={Allstuff}/>
+          <Route path="/productList" component={Listonly} />
           <Route path="/details" component={Details}/>
           <Route path="/cart" component={Cart}/>
           <Route component={Default}/>
         </Switch>
-        <Modal />
+       
+        
+
+        
+       
       </React.Fragment>
+
     );
   }
 }

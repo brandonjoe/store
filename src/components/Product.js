@@ -3,9 +3,14 @@ import styled from 'styled-components';
 import {Link} from 'react-router-dom'
 import {ProductConsumer} from '../context';
 import PropTypes from 'prop-types';
+
 class Product extends Component {
+
     render() {
         const {id, title, img, price, inCart} = this.props.product;
+        const name = {title}.title;
+      
+    
         return (
            <ProductWrapper className= 'col-9 mx-auto col-md-6 col-lg-3 my-3'>
                 <div className='card'>
@@ -27,7 +32,7 @@ class Product extends Component {
                   {/* card footer */}
                   <div className="card-footer d-flex justify-content-between">
                     <p className='align-self-center mb-0'>
-                    {title}
+                        {limitTitle(name)}
                     </p>
                     <h5 className='text-blue font-italic mb-0'>
                     <span className="mr-1">$</span>
@@ -38,6 +43,7 @@ class Product extends Component {
            </ProductWrapper>
         );
     }
+    
 }
 Product.propTypes = {
     product: PropTypes.shape({
@@ -49,6 +55,21 @@ Product.propTypes = {
     }).isRequired
 }
 
+const limitTitle = (name) => {
+    const newTitle = [];
+    if (name.length > 17){
+        name.split(' ').reduce((acc, curr) => {
+            if(acc + curr.length <= 17){
+                newTitle.push(curr)
+            }
+            return acc + curr.length;
+        }, 0);
+        return `${newTitle.join(' ')}...`;
+    } else {
+        return name;
+    }
+
+} 
 export default Product;
 const ProductWrapper = styled.div`
 .card{
@@ -84,7 +105,7 @@ const ProductWrapper = styled.div`
     bottom: 0;
     right: 0;
     padding: 0.2rem 0.4rem;
-    background: var(--lightBlue);
+    background: orange;
     border: none;
     color:var(--mainWhite);
     font-size: 1.4rem;
@@ -96,7 +117,7 @@ const ProductWrapper = styled.div`
     transform: translate(0,0);
 }
 .cart-btn:hover{
-    color:var(--mainBlue);
+    color:#e74856;
     cursor: pointer;
 }
 `

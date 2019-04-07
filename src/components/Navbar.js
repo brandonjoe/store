@@ -2,32 +2,40 @@ import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import  logo from '../cherry.png';
 import styled from 'styled-components';
-import {ButtonContainer} from './Button';
-import classes from './Landing.module.css';
+import classes from './Navbar.module.css';
+import { StickyContainer, Sticky } from 'react-sticky';
 class Navbar extends Component {
+
     render() {
         return (
-            <NavWrapper className="navbar navbar-expand-sm navbar-dark px-sm-5">
+            <NavWrapper className={classes.wrapper}>
 
                     <Link to='/'>
-                    <img src={logo} style={{width: "30px"}} alt="store" className='navbar-brand'/>
                     
+                    <div className={classes.home}>
+                    Home
+                    </div>
                     </Link>  
-                    <ul className='navbar-nav align-items-center'>
-                        <li className='nav-item ml-5'>
-                            <Link to='/' className={classes.navitem}>
+                    <ul className=''>
+                        <div className=''>
+                            <Link to='/productlist' className={classes.products}>
                                 Products
                             </Link>
-                        </li>
+                        </div>
                     </ul>
-                    <Link to='/cart' className='ml-auto'>
-                        <ButtonContainer>
-                            <span className="mr-2">
-                                <i className="fas fa-cart-plus" ></i>
-                            </span>
-                            my cart
-                        </ButtonContainer>
+    
+                  <Link to='/cart' className={` ${classes.fullcart}`}>
+                       
+                       <div className={`${classes.cart}`}>
+                           <span className={``}>
+                               <i className={`fas fa-cart-plus`} ></i>
+                           </span>
+                           <span className={classes.text}> Cart</span>
+                       </div>
+                   
                     </Link>
+
+                  
                          
             </NavWrapper>
         );
@@ -35,6 +43,7 @@ class Navbar extends Component {
 }
 const NavWrapper = styled.nav`
 .nav-item{
+    
     color: var(--mainWhite) !important;
     font-size: 1.3rem;
     text-transform: capitalize !important;

@@ -1,0 +1,91 @@
+.main{
+    height: 40rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.title{
+font-size: 4rem;
+text-transform: uppercase;
+font-weight: 200;
+letter-spacing: 3px;
+display: inline-block;
+color: orange;
+text-shadow: .5rem 1rem 2rem rgba(0,0,0,.5);
+margin-top: 3rem;
+padding: 2rem;
+}
+.message{
+    margin: 2rem;
+    font-size: 2rem;
+    letter-spacing: 3px;
+    font-weight: 300;
+    padding-bottom: 3rem;
+}
+.icon{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    align-self: flex-start;
+    width: 50%;
+    text-align: center;
+    padding: 2rem;
+    color: salmon;
+    height: 2rem;
+  
+    
+}
+.detail{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.info{
+    display: flex;
+    width: 30%;
+
+}
+.botinfo{
+    display: flex;
+    width: 30%;
+    border-bottom: 2px solid black;
+    padding-bottom: 2rem;
+}
+
+.links{
+    margin: 2rem;
+}
+.link{
+    padding: 2rem;
+    transition: all .1s;
+}
+.facelink{
+    color: #3b5998;
+}
+.etsylink{
+    color: #F56400;
+    
+}
+
+.link:hover{
+    text-decoration: none;
+    transform: scale(1.1);
+}
+.etsylink:hover{
+    
+    color: #F56400;
+    
+}
+.facelink:hover{
+
+    color: #3b5998;
+}
+.lastline{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

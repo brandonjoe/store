@@ -12,7 +12,7 @@ class About extends Component {
                     contemporary handmade jewelry
                 </div>
                     <div className={classes.flex}>
-                        <div className={classes.left}>
+                        <div className={`fade-right ${classes.left}`}>
                             <div className={classes.header}>
                                 Welcome to Lorem ipsum dolor 
                             </div>

@@ -2,7 +2,7 @@
     margin-top: 2rem;
     top: 0;
     left: 0;
-    height: 60vh;
+    height: 70vh;
     width: 100%;
     background-image: linear-gradient( 
         to right bottom,
@@ -20,28 +20,47 @@
     clip-path: polygon(0 20%, 100% 0, 100% 80%, 0 100%);
 }
 .container{
-    height: 60vh;
+    height: 70vh;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .card{
-    background-color: rgba(255,255,255,.5);
+    background-color: rgba(255,255,255,.7);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 13rem;
+    height: 19rem;
     width: 15rem;
     margin: 2rem;
+    border-radius: 4px;
+    box-shadow: 0 1rem 2.3rem rgba(0,0,0, .15);
+    transition: all .3s;
+}
+.card:hover{
+    transform: translateY(-.5rem) scale(1.03);
+    box-shadow: 0 1.5rem 2.6rem rgba(0,0,0, .3);
 }
 .icon{
-    height: 2rem;
-    width: 2rem;
-    background-image: linear-gradient(to right, red, orange);
-    display: inline-block;
+    background: linear-gradient(to right, salmon, orange);
     -webkit-background-clip: text;
-    color: blue;
-    fill: currentColor;
+    color:transparent;
+    margin-top: 1.5rem;
+    padding: 1rem;
+}
+.header{
+    font-size: 1rem;
+    display: inline-block;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: .3rem;
+    font-weight: 600;
+    color: rgb(255, 42, 19)
+}
+.text{
+    flex-grow: 1.2;
+    padding: .8rem 1.5rem 1.5rem 1.5rem;
+    text-align: center;
 }

@@ -1,0 +1,51 @@
+.main{
+    margin-top: 2rem;
+    top: 0;
+    left: 0;
+    height: 70vh;
+    width: 100%;
+    background-image: linear-gradient( 
+        to right bottom,
+        rgba(179, 61, 15, 0.9),
+        rgba(66, 25, 25, 0.8)),
+        url("../img/stats.jpg");    
+    background-size: cover;
+    background-repeat: none;
+    background-position: center;
+    display: block;
+    backface-visibility: hidden;
+    
+    -webkit-clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 85%);
+    clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 85%);
+}
+.container{
+    height: 70vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+.box{
+    text-align: center;
+    color: white;
+    padding: 2rem;
+    margin: 2rem;
+    width: 40%;
+    /* background-color: rgba(255,255,255, .5); */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.text{
+    margin-bottom: 2rem;
+}
+.icon{
+    margin: 2rem;
+}
+.star{
+    margin:.3rem;
+    background: orange;
+    -webkit-background-clip: text;
+    color:transparent;
+}
