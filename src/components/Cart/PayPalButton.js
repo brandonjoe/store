@@ -69,7 +69,6 @@ export default class MyApp extends React.Component {
                 <ProductConsumer>
                     {value => {
                         const {cart} = value;
-
                         // address={this.state.pay.address.city}
                         return( <Success  total={this.props.total} name={this.state.name} carty={cart}/>)
                        

@@ -6,6 +6,10 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 import Select from 'react-select';
 import classes from './Details.module.css';
+import {ProductProvider} from '../context.js';
+import Product from './Product';
+import Modal2 from './Modal2';
+
 const options = [
     {value: 1, label: "US: 1"},
     {value: 1.25, label: "US: 1.25"},
@@ -19,14 +23,18 @@ class Details extends Component {
     state={
         selectedOption: null
     }
+
+    
     handleChange = (selectedOption) => {
         this.setState({ selectedOption });
-        console.log(`Option selected:`, selectedOption);
-
-      }
+        // console.log(`Option selected:`, selectedOption);
+    }
+    
     render() {
+
         const {selectedOption} = this.state;
         return (
+            <div>
             <ProductConsumer>
                 {(value) => {
                    const{id,company,img,img2,img3, info, price, title, inCart, size}=value.detailProduct;
@@ -52,8 +60,11 @@ class Details extends Component {
                                 <div className="col-10 mx-auto col-md-6 my-3 text-capitalize">
                                 <div className={classes.select}>
                                     <div className={classes.size}>Size</div>
-                                    <Select isMulti={true} isSearchable={true} value={selectedOption} onChange={this.handleChange} options={options}>
+                                    <Select isMulti={true} isSearchable={true} onClick={value.changeSize(id, selectedOption)} value={selectedOption} onChange={this.handleChange} options={options}>
                                     </Select>
+                                    {/* <ButtonContainer onClick={value.changeSize(id, selectedOption)}>
+                                        Click to confirm size
+                                    </ButtonContainer> */}
                                     </div>
                                 <h4 className='text-title text-uppercase text-muted mt-3 mb-2'>
                                     <span className='text-uppercase'>
@@ -87,13 +98,28 @@ class Details extends Component {
                                     >
                                         {inCart ? 'in Cart' : 'add to cart'}
                                     </ButtonContainer>
+
                                 </div>
                                 </div>
                             </div>
                        </div>           
                    )
                 }}
+                
             </ProductConsumer>
+            <ProductConsumer>
+                {(value => {
+                    const {id} = value.detailProduct;
+                    return(
+                        <Modal2 id={id} />
+                    )
+                    
+
+                })
+
+                }
+            </ProductConsumer>
+           </div>
         );
     }
 }

@@ -13,8 +13,6 @@ class Success extends Component {
         )
     }
     componentDidMount() {
-        console.log(this.props.carty);
-        console.log(this.dateAndTime())
         const timeOrdered = this.dateAndTime();
         const order = {
             cart: this.props.carty,

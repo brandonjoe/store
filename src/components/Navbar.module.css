@@ -12,7 +12,7 @@
 
     transition: all .2s;
     display: inline-block;
-    text-shadow: 1rem 1rem 1rem rgba(0,0,0,.4);
+
    margin: 2rem;
 
 }
@@ -24,7 +24,7 @@
 
     transition: all .2s;
     display: inline-block;
-    text-shadow: 1rem 1rem 1rem rgba(0,0,0,.4);
+    
    margin: 2rem;
    margin-left: 6rem;
 }
@@ -32,13 +32,13 @@
     text-decoration: none;
     transform: translate(0, 3px);
     color: rgb(255, 31, 31);
-    text-shadow: 1rem 1rem 1rem rgba(0,0,0,.6);
+    
 }
 .products:hover{
     text-decoration: none;
     transform: translate(0, 3px);
     color: rgb(255, 31, 31);
-    text-shadow: 1rem 1rem 1rem rgba(0,0,0,.6);
+    
 }
 .cart{
     color: black;

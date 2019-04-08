@@ -88,6 +88,7 @@ class ProductProvider extends Component {
         const selectedProduct = tempCart.find(item => item.id ===id);
         const index = tempCart.indexOf(selectedProduct);
         const product = tempCart[index];
+        console.log(product);
         product.count = product.count - 1;
         if(product.count === 0){
             this.removeItem(id);
@@ -105,6 +106,15 @@ class ProductProvider extends Component {
             )
         }
     }
+    changeSize = (id, selectedOption) => {
+        let tempProducts = [...this.state.products];
+        const selectedProduct = tempProducts.find(item => item.id ===id);
+        const index = tempProducts.indexOf(selectedProduct);
+        const product = tempProducts[index];
+        product.size = selectedOption
+        // console.log(product.size);
+        // console.log(this.state);
+        }
     removeItem = (id) => {
         let tempProducts = [...this.state.products];
         let tempCart = [...this.state.cart];
@@ -165,7 +175,8 @@ class ProductProvider extends Component {
                     increment: this.increment,
                     decrement: this.decrement,
                     removeItem: this.removeItem,
-                    clearCart: this.clearCart
+                    clearCart: this.clearCart,
+                    changeSize: this.changeSize
                 }
             }>
                 {this.props.children}
