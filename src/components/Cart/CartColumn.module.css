@@ -1,0 +1,11 @@
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+.columns{
+    text-align: center;
+    width: 13%;
+   
+}

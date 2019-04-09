@@ -21,9 +21,10 @@ const options = [
 ]
 class Details extends Component {
     state={
-        selectedOption: null
+        selectedOption: []
     }
-
+    componentDidUpdate() {
+    }
     
     handleChange = (selectedOption) => {
         this.setState({ selectedOption });
@@ -37,7 +38,8 @@ class Details extends Component {
             <div>
             <ProductConsumer>
                 {(value) => {
-                   const{id,company,img,img2,img3, info, price, title, inCart, size}=value.detailProduct;
+                   const{id,company,img,img2,img3, info, price, title, inCart, count}=value.detailProduct;
+                   const {incrementDetail, decrementDetail} = value;
                    return(
                        <div className='container py-5'>
                             {/* title */}
@@ -59,13 +61,21 @@ class Details extends Component {
                                 {/* product text */}
                                 <div className="col-10 mx-auto col-md-6 my-3 text-capitalize">
                                 <div className={classes.select}>
-                                    <div className={classes.size}>Size</div>
+                                <div className={classes.size}>Size</div>
                                     <Select isMulti={true} isSearchable={true} onClick={value.changeSize(id, selectedOption)} value={selectedOption} onChange={this.handleChange} options={options}>
                                     </Select>
+                                </div><div className={classes.size}>Quantity</div>
+                                    <div className={classes.quantity}>
+                                    
+                                        <span className="btn btn-black mx-1" onClick={()=> decrementDetail(id)}>-</span>
+                                        <span className="btn btn-black mx-1">{count + 1}</span>
+                                        <span className="btn btn-black mx-1" onClick={()=> incrementDetail(id)}>+</span>
+                                    </div>
+                                    
                                     {/* <ButtonContainer onClick={value.changeSize(id, selectedOption)}>
                                         Click to confirm size
                                     </ButtonContainer> */}
-                                    </div>
+                                   
                                 <h4 className='text-title text-uppercase text-muted mt-3 mb-2'>
                                     <span className='text-uppercase'>
                                         {company} 
@@ -113,10 +123,7 @@ class Details extends Component {
                     return(
                         <Modal2 id={id} />
                     )
-                    
-
                 })
-
                 }
             </ProductConsumer>
            </div>

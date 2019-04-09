@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Product from './Product'
 import {ProductConsumer} from '../context'
 import classes from './ProductList.module.css';
-
+import Modal from './Modal2';
 
 
 
@@ -28,7 +28,6 @@ class ProductList extends Component {
                         </div>
                     </div>
                 </div>
-               
             </React.Fragment>
             //<Product></Product>
             

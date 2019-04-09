@@ -20,22 +20,24 @@ class Modal extends Component {
     state={
         selectedOption: []   
     }
-    
+
     componentDidUpdate() {
+        
         let value = this.context;
         let newId  = this.props.id -1;
-        let newSize = value.products[newId].size
-        if (this.state != newSize){
-            this.setState({
-                selectedOption: newSize
-            })
+
+        let newSize = value.products[newId].size;
+        let prevstate = this.state.selectedOption
+
+        if (prevstate != newSize) {
+            this.setState({selectedOption: newSize})
         }
- 
     }
     
-    handleChange = (selectedOption) => {
+    handler = (selectedOption) => {
         this.setState({ selectedOption });
         // console.log(`Option selected:`, selectedOption);
+
     }
     
     render() {
@@ -44,7 +46,7 @@ class Modal extends Component {
             <ProductConsumer>
                 {(value) => {
                     const{modalOpen,closeModal} = value;
-                    const{id, img, title, price}=value.modalProduct
+                    const{id, img, title, price, count}=value.modalProduct
                     if(!modalOpen){
                         return null;
                     }
@@ -52,12 +54,16 @@ class Modal extends Component {
                         return (<div className={classes.container}>
                             <div className="container">
                                 <div className="row">
-                                    <div id='modal' className={`col-8 mx-auto col-md-6 col-lg-4 text-center text-capitalize p-5 ${classes.modal}`}>
+                                    <div id='modal' className={`col-9 mx-auto col-md-6 col-lg-5 text-center text-capitalize p-5 ${classes.modal}`}>
                                         <h5>item added to the cart</h5>
                                         <img src={img} className='img-fluid' alt='product'/>
                                         <h4>{title}</h4>
-                                        <Select className={classes.select} isMulti={true} isSearchable={true} onClick={value.changeSize(id, selectedOption)} value={selectedOption} onChange={this.handleChange} options={options}>
+                                        <p>Size</p>
+                                        <Select className={classes.select} isMulti={true} isSearchable={true} onClick={value.changeSize(id, selectedOption)} value={selectedOption} onChange={this.handler} options={options}>
                                     </Select>
+                                    <p>Quantity</p>
+                                    <div className={classes.quantity}><span className="btn btn-black mx-1">{count}</span></div>
+                                    
                                         <h5 className='text-muted'>price : $ {price}</h5>
                                         <Link to='/productlist'>
                                             <ButtonContainer onClick={() => closeModal()}>

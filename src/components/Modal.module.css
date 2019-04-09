@@ -12,7 +12,11 @@ justify-content: center;
 }
 .modal{
     background: var(--mainWhite);
+    width: 70%;
     }
 .select{
-    margin: 2rem;
+    margin: 1rem;
+}
+.quantity{
+    margin: 1rem;
 }

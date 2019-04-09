@@ -9,6 +9,10 @@ import classes from '../ProductList.module.css';
 import Navbar from '../Navbar';
 
 class Cart extends Component {
+    componentDidMount(){
+        const value = this.context;
+        value.addTotals();
+    }
     render() {
         return (
 
@@ -39,5 +43,5 @@ class Cart extends Component {
         );
     }
 }
-
+Cart.contextType = ProductConsumer;
 export default Cart;

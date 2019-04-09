@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Landing from './Landing';
 import About from './About';
 import Features from './Features';
-import Modal2 from './Modal2';
+import Modal from './Modal';
 import Stats from './Stats';
 import Testimonial from './Testimonial.js';
 import Contact from './Contact.js';
@@ -20,7 +20,7 @@ class Allstuff extends Component {
         <Stats />
             <Testimonial />
                 <Contact />
-                <Modal2 />
+                <Modal />
             </div>
         );
     }

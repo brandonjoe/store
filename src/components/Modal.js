@@ -3,25 +3,49 @@ import styled from 'styled-components';
 import {ProductConsumer} from '../context';
 import {ButtonContainer} from './Button';
 import {Link} from 'react-router-dom';
+import Select from 'react-select';
+import classes from './Modal.module.css';
+const options = [
+    {value: 1, label: "US: 1"},
+    {value: 1.25, label: "US: 1.25"},
+    {value: 1.5, label: "US: 1.5"},
+    {value: 1.75, label: "US: 1.75"},
+    {value: 2, label: "US: 2"},
+    {value: 2.25, label: "US: 2.25"},
 
+]
 class Modal extends Component {
+    state={
+        selectedOption: []   
+    }
+    
+    handler = (selectedOption) => {
+        this.setState({ selectedOption });
+        // console.log(`Option selected:`, selectedOption);
+
+    }
     render() {
+        const {selectedOption} = this.state;
         return (
             <ProductConsumer>
                 {(value) => {
                     const{modalOpen,closeModal} = value;
-                    const{img, title, price}=value.modalProduct
+                    const{id, img, title, price,count}=value.modalProduct
                     if(!modalOpen){
                         return null;
                     }
                     else{
-                        return (<ModalContainer>
+                        return (<div className={classes.container}>
                             <div className="container">
                                 <div className="row">
-                                    <div id='modal' className="col-8 mx-auto col-md-6 col-lg-4 text-center text-capitalize p-5">
+                                    <div id='modal' className={`col-8 mx-auto col-md-6 col-lg-5 text-center text-capitalize p-5 ${classes.modal}`}>
                                         <h5>item added to the cart</h5>
                                         <img src={img} className='img-fluid' alt='product'/>
                                         <h4>{title}</h4>
+                                        <Select className={classes.select} isMulti={true} isSearchable={true} onClick={value.changeSize(id, selectedOption)} value={selectedOption} onChange={this.handler} options={options}>
+                                    </Select>
+                                    <p>Quantity</p>
+                                    <div className={classes.quantity}><span className="btn btn-black mx-1">{count + 1}</span></div>
                                         <h5 className='text-muted'>price : $ {price}</h5>
                                         <Link to='/productlist'>
                                             <ButtonContainer onClick={() => closeModal()}>
@@ -36,7 +60,7 @@ class Modal extends Component {
                                     </div>
                                 </div>
                             </div>
-                        </ModalContainer>
+                        </div>
                         );
                     }
                 }}
@@ -44,18 +68,6 @@ class Modal extends Component {
         );
     }
 }
-const ModalContainer = styled.div`
-position: fixed;
-top: 0;
-left: 0;
-right: 0;
-bottom: 0;
-background: rgba(0,0,0,.3);
-display: flex;
-align-items: center;
-justify-content: center;
-#modal{
-    background: var(--mainWhite);
-}
-`
+Modal.contextType = ProductConsumer;
+
 export default Modal;           

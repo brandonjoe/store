@@ -118,7 +118,7 @@ export const detailProduct = {
   title: "Google Pixel - Black",
   img: "",
   img2: "",
-  size: [],
+  size: [4],
   price: 10,
   company: "google",
   info:
