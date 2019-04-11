@@ -16,9 +16,20 @@ const options = [
 ]
 class Modal extends Component {
     state={
-        selectedOption: []   
+        selectedOption: [], 
     }
-    
+    componentDidUpdate() {
+        const val = this.context;
+        console.log(val.modalOpen);
+        console.log(this.state.selectedOption.length)
+        let prevState = val.modalOpen;
+        if(val.modalOpen === false && (this.state.selectedOption.length > 0)){
+            this.setState({
+                selectedOption: []
+            })
+
+        }
+    }
     handler = (selectedOption) => {
         this.setState({ selectedOption });
         // console.log(`Option selected:`, selectedOption);
@@ -45,15 +56,15 @@ class Modal extends Component {
                                         <Select className={classes.select} isMulti={true} isSearchable={true} onClick={value.changeSize(id, selectedOption)} value={selectedOption} onChange={this.handler} options={options}>
                                     </Select>
                                     <p>Quantity</p>
-                                    <div className={classes.quantity}><span className="btn btn-black mx-1">{count + 1}</span></div>
+                                    <div className={classes.quantity}><span className="btn btn-black mx-1">{selectedOption.length}</span></div>
                                         <h5 className='text-muted'>price : $ {price}</h5>
                                         <Link to='/productlist'>
-                                            <ButtonContainer onClick={() => closeModal()}>
+                                            <ButtonContainer disabled={selectedOption.length > 0 ? false : true} onClick={() => closeModal()}>
                                                 Continue shopping
                                             </ButtonContainer>
                                         </Link>
                                         <Link to='/cart'>
-                                            <ButtonContainer cart onClick={() => closeModal()}>
+                                            <ButtonContainer cart disabled={selectedOption.length > 0 ? false : true} onClick={() => closeModal()}>
                                                 go to cart
                                             </ButtonContainer>
                                         </Link>

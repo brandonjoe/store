@@ -3,6 +3,7 @@ import classes from './Success.module.css';
 import {ProductConsumer} from '../../context';
 import CheckoutItem from './CheckoutItem';
 import axios from '../../axios-orders';
+import {ButtonContainer} from '../Button.js';
 class Success extends Component {
     dateAndTime = () => {
         let today = new Date();
@@ -34,18 +35,18 @@ class Success extends Component {
                 <div className={classes.container}>
                 <div className={classes.modal}>
                     <div className={classes.success}>
-                            Payment was successful! 
+                            Payment was successful!
                     </div>
                     <p className={classes.text}> Thank you {this.props.name}! Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
                     {this.props.address}
                     <ProductConsumer>
                         {value => {
-                            const {cart} = value;
-                            if(cart.length > 0) {
-                               cart.map(item => {
-                                   return <CheckoutItem key={item.id} item={item}/>
-                               })
-                            }
+                            
+                            console.log(value.cart[0])
+                            return value.cart.map((item) => {
+                                return <CheckoutItem {...item} />
+                            })
+                            
                         }}
                     </ProductConsumer>
                     {this.props.total}

@@ -3,41 +3,57 @@ import {Link} from 'react-router-dom';
 import  logo from '../cherry.png';
 import styled from 'styled-components';
 import classes from './Navbar.module.css';
+import { ProductConsumer } from '../context.js';
 import { StickyContainer, Sticky } from 'react-sticky';
 class Navbar extends Component {
 
     render() {
         return (
-            <NavWrapper className={classes.wrapper}>
+            <ProductConsumer>
+                {value => {
+                    const {cart} = value;
+                    let total = 0;
+                    cart.map(item => {
+                        total += item.count;
 
-                    <Link to='/'>
+                    })
                     
-                    <div className={classes.home}>
-                    Home
-                    </div>
-                    </Link>  
-                    <ul className=''>
-                        <div className=''>
-                            <Link to='/productlist' className={classes.products}>
-                                Products
-                            </Link>
-                        </div>
-                    </ul>
-    
-                  <Link to='/cart' className={` ${classes.fullcart}`}>
-                       
-                       <div className={`${classes.cart}`}>
-                           <span className={``}>
-                               <i className={`fas fa-cart-plus`} ></i>
-                           </span>
-                           <span className={classes.text}> Cart</span>
-                       </div>
-                   
-                    </Link>
+                    return(
+                        <NavWrapper className={classes.wrapper}>
 
-                  
-                         
-            </NavWrapper>
+                            <Link to='/'>
+
+                            <div className={classes.home}>
+                            Home
+                            </div>
+                            </Link>  
+                            <ul className=''>
+                                <div className=''>
+                                    <Link to='/productlist' className={classes.products}>
+                                        Products
+                                    </Link>
+                                </div>
+                            </ul>
+
+                            <Link to='/cart' className={` ${classes.fullcart}`}>
+
+                            <div className={`${classes.cart}`}>
+                                <span className={``}>
+                                    <i className={`fas fa-cart-plus`} ></i>
+                                </span>
+                                <span className={classes.text}> Cart ({total})</span>
+                            </div>
+
+                            </Link>
+
+
+                                
+                        </NavWrapper>
+                    )
+                }}
+                
+            </ProductConsumer>
+           
         );
     }
 }

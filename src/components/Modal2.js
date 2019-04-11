@@ -18,9 +18,11 @@ const options = [
 class Modal extends Component {
     
     state={
-        selectedOption: []   
+        selectedOption: []
     }
+    componentDidMount() {
 
+    }
     componentDidUpdate() {
         
         let value = this.context;
@@ -28,16 +30,15 @@ class Modal extends Component {
 
         let newSize = value.products[newId].size;
         let prevstate = this.state.selectedOption
-
+  
         if (prevstate != newSize) {
             this.setState({selectedOption: newSize})
         }
+        
     }
     
-    handler = (selectedOption) => {
-        this.setState({ selectedOption });
-        // console.log(`Option selected:`, selectedOption);
-
+    handleChange = (selectedOption) => {
+        this.setState({ selectedOption: selectedOption });
     }
     
     render() {
@@ -46,7 +47,8 @@ class Modal extends Component {
             <ProductConsumer>
                 {(value) => {
                     const{modalOpen,closeModal} = value;
-                    const{id, img, title, price, count}=value.modalProduct
+                    const{id, img, title, price, count}=value.modalProduct;
+                    const {size} = value.detailProduct;
                     if(!modalOpen){
                         return null;
                     }
@@ -59,19 +61,20 @@ class Modal extends Component {
                                         <img src={img} className='img-fluid' alt='product'/>
                                         <h4>{title}</h4>
                                         <p>Size</p>
-                                        <Select className={classes.select} isMulti={true} isSearchable={true} onClick={value.changeSize(id, selectedOption)} value={selectedOption} onChange={this.handler} options={options}>
+                                        <Select className={classes.select} isMulti={true} isSearchable={true} onClick={value.changeSize(id, selectedOption)} value={selectedOption} onChange={this.handleChange} options={options}>
                                     </Select>
                                     <p>Quantity</p>
-                                    <div className={classes.quantity}><span className="btn btn-black mx-1">{count}</span></div>
+                                    <div className={classes.quantity}><span className="btn btn-black mx-1">{selectedOption.length}</span></div>
                                     
                                         <h5 className='text-muted'>price : $ {price}</h5>
                                         <Link to='/productlist'>
-                                            <ButtonContainer onClick={() => closeModal()}>
+                                            <ButtonContainer mod disabled={selectedOption.length > 0 ? false : true}onClick={() => closeModal()}>
                                                 Continue shopping
+                                               
                                             </ButtonContainer>
                                         </Link>
                                         <Link to='/cart'>
-                                            <ButtonContainer cart onClick={() => closeModal()}>
+                                            <ButtonContainer mod cart disabled={selectedOption.length > 0 ? false : true} onClick={() => closeModal()}>
                                                 go to cart
                                             </ButtonContainer>
                                         </Link>

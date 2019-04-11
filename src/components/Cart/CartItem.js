@@ -30,9 +30,9 @@ const CartItem = ({item,value}) => {
             <div className={classes.column}>
                 <div className="d-flex justify-content-center">
                     <div>
-                        <span className="btn btn-black mx-1" onClick={()=> decrement(id)}>-</span>
-                        <span className="btn btn-black mx-1">{count}</span>
-                        <span className="btn btn-black mx-1" onClick={()=> increment(id)}>+</span>
+                       
+                        <span className="btn btn-black mx-1">{size.length}</span>
+                       
                     </div>
                 </div>
             </div>

@@ -155,8 +155,6 @@ class ProductProvider extends Component {
         const product = tempProducts[index];
         product.size = selectedOption;
         product.count = product.size.length;
-
-
     }
     showSizes = () => {
         console.log('aaa')

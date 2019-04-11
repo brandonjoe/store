@@ -23,7 +23,7 @@ export default class MyApp extends React.Component {
 
                     this.setState({
                         pay:payment,
-                        isComplete:true
+                        isComplete:false
                     })
 
                     // this.props.clearCart();

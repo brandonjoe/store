@@ -1,9 +1,11 @@
 :root{
-  --mainBlue:#2a2a72;
-  --lightBlue: #009ffd;
+  --mainBlue:#100000 ;
+  --lightBlue: #FF6666 ;
   --mainWhite: #f3f3f3;
   --mainDark: #232528;
   --mainYellow: #ffa400;
+  --mainGrey: #808080;
+  --lightGrey: #D3D3D3;
 }
 body{
   font-family: "Lato", sans-serif;

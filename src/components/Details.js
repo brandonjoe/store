@@ -9,6 +9,7 @@ import classes from './Details.module.css';
 import {ProductProvider} from '../context.js';
 import Product from './Product';
 import Modal2 from './Modal2';
+import Navbar from './Navbar';
 
 const options = [
     {value: 1, label: "US: 1"},
@@ -27,8 +28,8 @@ class Details extends Component {
     }
     
     handleChange = (selectedOption) => {
-        this.setState({ selectedOption });
-        // console.log(`Option selected:`, selectedOption);
+        this.setState({ selectedOption: selectedOption });
+        
     }
     
     render() {
@@ -36,11 +37,13 @@ class Details extends Component {
         const {selectedOption} = this.state;
         return (
             <div>
+                <Navbar />
             <ProductConsumer>
                 {(value) => {
-                   const{id,company,img,img2,img3, info, price, title, inCart, count}=value.detailProduct;
+                   const{id,company,img,img2,img3, info, price, title, inCart, count, size}=value.detailProduct;
                    const {incrementDetail, decrementDetail} = value;
                    return(
+                       
                        <div className='container py-5'>
                             {/* title */}
                             <div className='row'>
@@ -66,10 +69,7 @@ class Details extends Component {
                                     </Select>
                                 </div><div className={classes.size}>Quantity</div>
                                     <div className={classes.quantity}>
-                                    
-                                        <span className="btn btn-black mx-1" onClick={()=> decrementDetail(id)}>-</span>
-                                        <span className="btn btn-black mx-1">{count + 1}</span>
-                                        <span className="btn btn-black mx-1" onClick={()=> incrementDetail(id)}>+</span>
+                                        <span className="btn btn-black mx-1">{selectedOption.length}</span>
                                     </div>
                                     
                                     {/* <ButtonContainer onClick={value.changeSize(id, selectedOption)}>
@@ -94,7 +94,7 @@ class Details extends Component {
                                  {/* button */}
                                 <div>
                                     <Link to='/productlist'>
-                                    <ButtonContainer>
+                                    <ButtonContainer >
                                         back to products
                                     </ButtonContainer>
                                     </Link>
@@ -119,9 +119,9 @@ class Details extends Component {
             </ProductConsumer>
             <ProductConsumer>
                 {(value => {
-                    const {id} = value.detailProduct;
+                    const {id , size} = value.detailProduct;
                     return(
-                        <Modal2 id={id} />
+                        <Modal2 id={id} size={size} />
                     )
                 })
                 }
