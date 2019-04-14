@@ -11,6 +11,7 @@ class ProductProvider extends Component {
         detailProduct: detailProduct,
          cart: [],
          modalOpen: false,
+         successOpen: false,
          modalProduct: detailProduct,
          cartSubTotal: 0,
          cartTax:0,
@@ -38,6 +39,19 @@ class ProductProvider extends Component {
         this.setState(()=>{
             return {detailProduct: product}
         })
+    }
+    resetCart= () => {
+        console.log(this.state)
+        this.setState({
+            cart: []
+        })
+        console.log(this.state.products)
+        this.state.products.map(item => (
+            item.count = 0,
+            item.inCart = false
+            
+        ))
+        
     }
     addToCart = (id) => {
         let tempProducts = [...this.state.products];
@@ -213,6 +227,7 @@ class ProductProvider extends Component {
             <ProductContext.Provider value={
                 {
                     ...this.state,
+                    resetCart: this.resetCart,
                     showSizes: this.showSizes,
                     addTotals: this.addTotals,
                     decrementDetail: this.decrementDetail,

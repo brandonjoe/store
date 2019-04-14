@@ -13,12 +13,12 @@ class Allstuff extends Component {
     render() {
         return (
             <div>
-                         <Landing />
-        <About />
-        <Features />
-            <ProductList />
-        <Stats />
-            <Testimonial />
+                <Landing />
+                <About />
+                <Features />
+                    <ProductList />
+                <Stats />
+                    <Testimonial />
                 <Contact />
                 <Modal />
             </div>

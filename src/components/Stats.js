@@ -10,7 +10,7 @@ class Stats extends Component {
                 <div className={classes.main}>
                     <div className={classes.container}>
                     <ScrollAnimation animateIn='fadeIn'>
- <div className={classes.stat}>
+                            <div className={classes.stat}>
                       
                             <div className={classes.number}>
                                 400+

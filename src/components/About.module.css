@@ -86,3 +86,111 @@
 .text{
     font-size: 1rem; 
 }
+@media screen and (max-width: 1050px){
+    .photo{
+        width: 10rem;
+    }
+    .p3{
+        left: 2rem;
+    }
+    .p2{
+        left: 12rem;
+    }
+    .p1{
+        left:2rem;
+    }
+    
+}
+@media only screen and (max-width: 700px){
+    .flex{
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+    }
+    .photo{
+        width: 8rem;
+        box-shadow: none;
+    }
+    .p3{
+        left: 2rem;
+        top: 0rem;
+    }
+    .p2{
+        left: 12rem;
+        top: 0rem;
+    }
+    .p1{
+        left:-10rem;
+        top: 0rem;
+    }
+    .left{
+        width: 80%;
+    }
+}
+@media only screen and (max-width: 650px){
+    .title{
+        margin-bottom: 0rem;
+        padding: .5rem;
+        text-align: center;
+    }
+    .left{
+        margin: 0;
+    }
+    .container{
+        padding-bottom: 0rem;
+    }
+    .right{
+        margin: 0;
+        padding: 0;
+        height: rem;
+    }
+    .p3{
+        left: rem;
+        top: 2rem;
+    }
+    .p2{
+        left: 9rem;
+        top: 2rem;
+    }
+    .p1{
+        left:-6rem;
+        top: 2rem;
+    }
+}
+@media only screen and (max-width: 550px){
+    .photos{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        height: 20rem;
+    }
+    .p3{
+        left: rem;
+        top: 5rem;
+    }
+    .p2{
+        left: 9rem;
+        top: 5rem;
+    }
+    .p1{
+        left:-6rem;
+        top: 5rem;
+    }
+}
+@media only screen and (max-width: 420px){
+    .photo{
+        width: 5rem;
+    }
+    .p3{
+        left: 1rem;
+        top: 8rem;
+    }
+    .p2{
+        left: 6rem;
+        top: 8rem;
+    }
+    .p1{
+        left:-4rem;
+        top: 8rem;
+    }
+}

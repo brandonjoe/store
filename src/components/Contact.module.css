@@ -89,3 +89,34 @@ padding: 2rem;
     justify-content: center;
     align-items: center;
 }
+@media only screen and (max-width: 800px){
+    .info{
+        flex-direction: column;
+    }
+    .detail{
+        width: 100%;
+    }
+    .botinfo{
+        flex-direction: column;
+    }
+    .icon{
+        margin: 0 auto;
+    }
+    .message{
+        text-align: center;
+        font-size: 1.5rem;
+    }
+    .title{
+        font-size: 3rem;
+    }
+}
+@media only screen and (max-width: 500px){
+    .info{
+        width: 100%;
+    }
+    .icon{
+        width: 100%;
+        display: block;
+        margin: 0 auto;
+    }
+}

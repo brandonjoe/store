@@ -64,3 +64,34 @@
     padding: .8rem 1.5rem 1.5rem 1.5rem;
     text-align: center;
 }
+@media only screen and (max-width: 915px){
+    .card{
+        margin: 1rem;
+        width: 13rem;
+    }
+    .container{
+
+    }
+}
+@media only screen and (max-width: 700px){
+    .container{
+        flex-direction: column;
+        justify-content: center;
+        height: 100vh;
+    }
+    .main{
+        height: 100vh;
+        -webkit-clip-path: polygon(100% 0, 100% 80%, 0 100%, 20%);
+        clip-path: polygon(100% 0, 100% 90%, 0 100%, 0 10%);
+    }
+    .card{
+        width: 80%;
+        height:15rem;
+        z-index: 100;
+        font-size: 1rem;
+        margin: 1rem auto;
+    }
+    .text{
+        padding: 1rem;
+    }
+}

@@ -4,6 +4,7 @@ import {ProductConsumer} from '../../context';
 import CheckoutItem from './CheckoutItem';
 import axios from '../../axios-orders';
 import {ButtonContainer} from '../Button.js';
+import {Link} from 'react-router-dom';
 class Success extends Component {
     dateAndTime = () => {
         let today = new Date();
@@ -38,8 +39,13 @@ class Success extends Component {
                             Payment was successful!
                     </div>
                     <p className={classes.text}> Thank you {this.props.name}! Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
-                    {this.props.address}
-                    <ProductConsumer>
+                    <p className={classes.text}> We will send to:</p>
+                    <p className={classes.address}> {this.props.name} </p>
+                    <p className={classes.address}> {this.props.street} </p>
+                    <p className={classes.address}> {this.props.city}, {this.props.state} {this.props.zip} </p>
+
+                    <p className={classes.text}>Please check {this.props.email} within the new few days for an tracking number and confirmation from out email at blank</p>
+                    {/* <ProductConsumer>
                         {value => {
                             
                             console.log(value.cart[0])
@@ -49,8 +55,24 @@ class Success extends Component {
                             
                         }}
                     </ProductConsumer>
-                    {this.props.total}
+                    {this.props.total} */}
+                    <ProductConsumer>
+                        { value => {
+                            const{resetCart} = value
+                            return(
+                                <div>
+                                        <Link to='/'>
+                                    <ButtonContainer className={classes.button} onClick={() => resetCart()}>
+                                        Back to home
+                                    </ButtonContainer>
+                                </Link>
+                                </div>
+                                
+                            )
+                        }}
                     
+                    </ProductConsumer>
+               
                     
                 </div>
             </div>

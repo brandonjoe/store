@@ -23,17 +23,27 @@ class Navbar extends Component {
 
                             <Link to='/'>
 
-                            <div className={classes.home}>
+                            <div className={`${classes.home} `}>
                             Home
                             </div>
                             </Link>  
-                            <ul className=''>
-                                <div className=''>
-                                    <Link to='/productlist' className={classes.products}>
+
+                                    <Link to='/productlist' className={classes.home}>
                                         Products
                                     </Link>
+
+                            <Link to='/faq'>
+
+                                <div className={classes.home}>
+                                    FAQ
                                 </div>
-                            </ul>
+                            </Link>  
+                            <Link to='/contact'>
+
+                                <div className={classes.home}>
+                                    Contact
+                                </div>
+                            </Link>  
 
                             <Link to='/cart' className={` ${classes.fullcart}`}>
 

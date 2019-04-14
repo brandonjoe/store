@@ -9,12 +9,13 @@ export default class MyApp extends React.Component {
         this.state={
             pay: {},
             isComplete: false,
-            address: '1231',
-            name: 'Melinda Joe'
-
         };
     }
-
+    componentDidMount() {
+        this.setState({
+            isComplete: false
+        })
+    }
     render() {
 
         const onSuccessb = (payment) => {
@@ -23,7 +24,7 @@ export default class MyApp extends React.Component {
 
                     this.setState({
                         pay:payment,
-                        isComplete:false
+                        isComplete:true
                     })
 
                     // this.props.clearCart();
@@ -69,8 +70,19 @@ export default class MyApp extends React.Component {
                 <ProductConsumer>
                     {value => {
                         const {cart} = value;
-                        // address={this.state.pay.address.city}
-                        return( <Success  total={this.props.total} name={this.state.name} carty={cart}/>)
+                        return( <Success  
+                            total={this.props.total}
+                            street={this.state.pay.address.line1} 
+                            city={this.state.pay.address.city} 
+                            state={this.state.pay.address.state}
+                            zip={this.state.pay.address.postal_code}
+                            name={this.state.pay.address.recipient_name} 
+                            email={this.state.pay.email}
+                            carty={cart}
+                            isComplete={this.state.isComplete}
+                            
+                            />
+                            )
                        
                     }}
                     

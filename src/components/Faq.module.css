@@ -1,0 +1,34 @@
+.questioncontainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+}
+.title{
+    font-size: 4rem;
+text-transform: uppercase;
+font-weight: 200;
+letter-spacing: 3px;
+color: orange;
+
+padding: 2rem;
+text-align: center;
+width: 100%;
+}
+.header{
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-align: center;
+    color: salmon;
+    margin-bottom: 2rem;
+}
+.text{
+    width: 35%;
+    text-align: center;
+    margin: 0 auto;
+    line-height: 2rem;
+    margin-bottom: 2rem;
+}

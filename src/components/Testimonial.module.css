@@ -49,3 +49,19 @@
     -webkit-background-clip: text;
     color:transparent;
 }
+@media only screen and (max-width: 600px){
+    .main{
+         height: 100vh;
+         -webkit-clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
+    clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
+    }
+    .container{
+        flex-direction: column;
+        height: 100vh;
+    }
+    .box{
+        margin: 0rem;
+        width: 100%;
+        padding: 1rem;
+    }
+}
