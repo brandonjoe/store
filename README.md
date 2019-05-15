@@ -2,4 +2,4 @@ General use: This project was made to my sister's etsy [store](https://www.etsy.
 
 Future plans: I plan to make the price calculations on a real backend so that the user can't manipulate the files. As of right now, there is only paypal, but I plan to use other forms of payment, but through the use of their API (Applepay for example). I do want to learn PHP to have a proper contact form, as of right now it uses Formspree. 
 
-[DEMO](https://brandonjoe.github.io/store/)
+[Live Demo](https://brandonjoe.github.io/store/)
