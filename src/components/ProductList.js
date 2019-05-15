@@ -16,7 +16,7 @@ class ProductList extends Component {
                 <div className='py-5'>
                     <div className='container'>
                     <div className={classes.title}>Products</div>
-                        <div className='row'>
+                        <div className='row' style={{zIndex:0}}>
                             <ProductConsumer>
                                 {(value)=>{
                                     return value.products.map(product => {

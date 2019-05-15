@@ -1,12 +1,12 @@
 .main{
     top: 0;
     left: 0;
-    height: 30vh;
+    height: 20rem;;
     width: 100%;
     margin-top: 0;
 }
 .container{
-    height: 30vh;
+    height: 100%;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -36,13 +36,15 @@
 }
 @media only screen and (max-width: 915px) {
     .stat{
-        margin:0 rem;
+        margin: 0rem;
         width: 10rem;
     }
 }
 @media only screen and (max-width: 700px){
     .container{
         flex-direction: column;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
     }
     .number{
         padding: .5rem;

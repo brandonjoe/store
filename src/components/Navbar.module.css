@@ -1,23 +1,29 @@
 .wrapper{
-    height: 10%;
+    height: 6rem;
+    z-index: 100;
+    display: flex;
+    flex-direction: row; 
+    position: relative;
+    
+}
+.menu{
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
-
 .home{
     color: black;
     text-transform: uppercase;
     letter-spacing: .5rem;
     font-size: 1.6rem;
-
+   
     transition: all .2s;
     
    margin: 2rem;
    margin-left: 6rem;
 }
 .home:hover{
-    text-decoration: none;
+    text-decoration: none !important;
     transform: translate(0, 3px);
     color: rgb(255, 31, 31);
     
@@ -40,6 +46,7 @@
 
 
 }
+
 .fullcart{
  margin-left: auto;
  padding: 2rem;
@@ -47,6 +54,16 @@
 }
 .fullcart:hover{
     text-decoration: none;
+}
+.ham{
+    margin: 1rem;
+    padding-left: 2rem;
+    font-size: 2.5rem;
+    display: none;
+    color: black;
+}
+.toggle{
+    display: none !important;
 }
 
 @media screen and (max-width: 1330px) {
@@ -57,7 +74,7 @@
 
     }
 }
-@media screen and (max-width: 847px){
+@media screen and (max-width: 904px){
     .fullcart{
         padding: 1rem;
         padding-right: 1rem;
@@ -68,16 +85,58 @@
 }
 @media only screen and (max-width: 818px) {
 
-    .wrapper{
-        flex-direction: column;
-        text-align: center;
-    }
+
     .home{
         margin: .5rem;
         font-size: 1rem;
-        background-color: rgba(orange, .5);
+        
     }
     .fullcart{
+   
+    }
+}
+@media only screen and (max-width: 600px){
+    .ham{
+        display: block;
+        cursor: pointer;
+        
+    }
+    .toggle{
+        background: red;
+    }
+    .wrapper{ 
+        background: rgba(117, 117, 117, .6);
+    }
+    .menu{
+        display: none;
+        width: 100%;
+    }
+ 
+    .fullcart{
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+    .toggle:checked ~ .menu{
+        display: block;
+        position: absolute;
+        
+    }
+    .toggle:checked ~ .wrapper{
+        background: rgba(117, 117, 117, .6);
+    }
+    .home{
+        background: #757575;
         margin: 0 auto;
+        font-size: 1.6rem;
+        padding: 1rem;
+        text-align: center;
+        width: 100%;
+        border: .5px solid black;
+        z-index: 1000;
+        
+        
+    }
+    .notcart{
+    
     }
 }

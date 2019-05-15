@@ -19,8 +19,11 @@ class Navbar extends Component {
                     })
                     
                     return(
-                        <NavWrapper className={classes.wrapper}>
-
+                        <NavWrapper className={classes.wrapper} style={{zIndex:100}}>
+                        <div className={classes.notcart}>
+                            <label for="toggle" className={classes.ham}>&#9776;</label>
+                            <input type='checkbox' id='toggle' className={classes.toggle}></input>
+                            <div className={classes.menu}>
                             <Link to='/'>
 
                             <div className={`${classes.home} `}>
@@ -28,8 +31,10 @@ class Navbar extends Component {
                             </div>
                             </Link>  
 
-                                    <Link to='/productlist' className={classes.home}>
-                                        Products
+                                    <Link to='/productlist' >
+                                    <div className={`${classes.home} `}>
+                                Products
+                                    </div>
                                     </Link>
 
                             <Link to='/faq'>
@@ -44,6 +49,10 @@ class Navbar extends Component {
                                     Contact
                                 </div>
                             </Link>  
+                            </div>
+                        </div>
+                            
+                            
 
                             <Link to='/cart' className={` ${classes.fullcart}`}>
 

@@ -10,13 +10,14 @@ import Allstuff from './components/Allstuff';
 import Listonly from './components/Listonly';
 import Faq from './components/Faq';
 import { StickyContainer, Sticky } from 'react-sticky';
+import Navbar from './components/Navbar';
 import ContactForm from './components/ContactForm';
 class App extends Component {
   render() {
     return (
 
       <React.Fragment>
-        
+        {/* <Navbar /> */}
         <Switch>
           <Route path="/" exact component={Allstuff}/>
           <Route path="/productList" component={Listonly} />

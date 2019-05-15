@@ -32,3 +32,19 @@ width: 100%;
     line-height: 2rem;
     margin-bottom: 2rem;
 }
+@media only screen and (max-width: 1170px){
+    .title{
+        font-size: 3rem;
+    }
+    .text{
+        width: 60%;
+    }
+}
+@media only screen and (max-width: 600px){
+    .title{
+        font-size: 2rem;
+    }
+    .text{
+        width: 80%;
+    }
+}

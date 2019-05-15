@@ -9,3 +9,33 @@
     width: 13%;
  
 }
+.img{
+    width: 5rem;
+    height: 5rem;
+}
+.quantity{
+    display: none;
+}
+@media screen and (max-width: 1000px){
+    .quantity{
+        display: inline-block;
+    }
+}
+@media screen and (max-width: 600px){
+    .row{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 2rem;
+        border-bottom: 2px solid black;
+    }
+    .column{
+        
+        width: 100%;
+    }
+    .img{
+        width: 10rem;
+        height: 10rem;
+    }
+
+}

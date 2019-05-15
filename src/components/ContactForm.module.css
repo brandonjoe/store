@@ -9,12 +9,42 @@ padding: 2rem;
 text-align: center;
 width: 100%;
 }
+.header{
+    text-transform: uppercase;
+font-weight: 200;
+letter-spacing: 3px;
+color: salmon;
+margin-bottom: 2rem;
+}
+.subheader{
+    font-size: 1.2rem;
+    
+font-weight: 200;
+letter-spacing: 3px;
+color: orange;
+}
+.left{
+    width: 50%;
+    margin: 3rem;
+}
+.right{
+    width: 50%;
+    margin: 3rem;
+}
+.main{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    width: 100%;
+}
  .container{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
+    width: 100%;
 } 
 .form{
     display: flex;
@@ -34,17 +64,19 @@ width: 100%;
 .message{width: 100%;
 text-align: center;}
 .textarea{
-    width: 100%;
+    width: 25rem;
     height: 15rem;
     padding: 1rem;
+    border: 2px solid salmon;
 }
 .name{
     width: 100%;
     padding: 1rem;
+    border: 2px solid salmon
 } 
 
 
-first > label{
+.first > label{
     display: block;
     margin-bottom: 2rem;
     
@@ -59,4 +91,132 @@ first > label{
 .button{
     width: 50%;
     margin: 0 auto;
+}
+.icon{
+position: relative;
+top: 4rem;
+color: salmon;
+
+}
+.detail{
+    display: inline-block;
+    margin: 2rem;
+}
+.detail1{
+    display: block;
+}
+.lastline{
+    display: inline-block;
+    position: relative;
+    padding: 1.5rem;
+    top: -2.5rem;
+    left: -1rem;
+}
+.icon1{
+    position: relative;
+top: -2rem;
+left: -5px;
+color: salmon;
+margin: 1rem;
+
+}
+.margin{
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+}
+
+.links{
+    margin: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.link{
+    padding: 2rem;
+    transition: all .1s;
+}
+.facelink{
+    color: #3b5998;
+}
+.etsylink{
+    color: #F56400;
+    
+}
+.last{
+    border-bottom: 3px solid orange;
+}
+
+@media only screen and (max-width: 1000px){
+    .main{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .left{
+        width: 80%;
+        margin-bottom: 0rem;
+    }
+    .header{
+        text-align: center;
+    }
+    .subheader{
+        text-align: center;
+    }
+    .right{
+        width: 80%;
+    }
+
+    .form{
+        margin: 0 auto;
+    }
+    .title{
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+@media only screen and (max-width: 600px){
+    .left{
+        margin: 0 auto;
+    }
+    .main{
+        width: 90%;
+    }
+    .title{
+        font-size: 3rem;
+    }
+    .header{
+        font-size:
+    }
+    .first{
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+.textarea{
+    width: 20rem;
+    height: 10rem;
+    padding: 1rem;  
+}
+}
+@media only screen and (max-width: 600px){
+    .title{
+        font-size: 2rem;
+        margin: 0 auto;
+    }
+    .header{
+        font-size: 1.2rem;
+        margin: auto;
+        width: 85%;
+    }.subheader{
+        font-size: 1rem;
+        margin: 0 auto;
+    }
+    .left{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-right: 2rem;
+    }
 }

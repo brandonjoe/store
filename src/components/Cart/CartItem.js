@@ -9,28 +9,28 @@ const CartItem = ({item,value}) => {
             <div className={classes.column}>
                 <img 
                 src={img} 
-                style={{width: '5rem', height: "5rem"}}
-                className='img-fluid' 
+                
+                className={classes.img} 
                 alt='product' />
             </div>
             <div className={classes.column}>
-                <span className="d-lg-none">product : </span>
+                <span className="d-lg-none">Product : </span>
                 {title}
             </div>
             <div className={classes.column}>
-                <span className="d-lg-none">price : </span>
+                <span className="d-lg-none">Price : </span>
                 {price}
             </div>
             <div className={classes.column}>
-                <span className="d-lg-none">size : </span>
-            {size.map(item => {
+                <span className="d-lg-none">Size : </span>
+                {size.map(item => {
                 return(<Size size={item.label}/>)
-            })}
+            })} 
             </div>
             <div className={classes.column}>
                 <div className="d-flex justify-content-center">
                     <div>
-                       
+                       <span className={classes.quantity}>Quantity:</span>
                         <span className="btn btn-black mx-1">{size.length}</span>
                        
                     </div>
