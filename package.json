@@ -2,7 +2,7 @@
   "name": "store",
   "version": "0.1.0",
   "private": true,
-  "homepage":"https.brandonjoe.github.io/store",
+  "homepage":"https://brandonjoe.github.io/store/",
   "dependencies": {
     "axios": "^0.18.0",
     "bootstrap": "^4.3.1",

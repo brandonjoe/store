@@ -13,20 +13,26 @@ import { StickyContainer, Sticky } from 'react-sticky';
 import Navbar from './components/Navbar';
 import ContactForm from './components/ContactForm';
 class App extends Component {
+ 
+
   render() {
+
     return (
 
       <React.Fragment>
         {/* <Navbar /> */}
+    
         <Switch>
           <Route path="/" exact component={Allstuff}/>
-          <Route path="/productList" component={Listonly} />
-          <Route path="/details" component={Details}/>
-          <Route path="/cart" component={Cart}/>
+          <Route path= "/productList" component={Listonly} />
+          <Route path="/detail" component={Details}/>
+          <Route path= "/cart" component={Cart}/>
           <Route path="/faq" component={Faq} />
           <Route path="/contact" component={ContactForm} />
           <Route component={Default}/>
         </Switch>
+
+        
        
         
 

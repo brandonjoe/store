@@ -24,7 +24,7 @@ class Navbar extends Component {
                             <label for="toggle" className={classes.ham}>&#9776;</label>
                             <input type='checkbox' id='toggle' className={classes.toggle}></input>
                             <div className={classes.menu}>
-                            <Link to='/'>
+                            <Link to='/store'>
 
                             <div className={`${classes.home} `}>
                             Home

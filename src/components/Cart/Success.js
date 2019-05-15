@@ -61,7 +61,7 @@ class Success extends Component {
                             const{resetCart} = value
                             return(
                                 <div>
-                                        <Link to='/'>
+                                        <Link to='/store/'>
                                     <ButtonContainer className={classes.button} onClick={() => resetCart()}>
                                         Back to home
                                     </ButtonContainer>
