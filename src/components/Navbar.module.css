@@ -28,6 +28,7 @@
     color: rgb(255, 31, 31);
     
 }
+.btn-link:hover{text-decoration:none !important}
 
 .cart{
     color: black;

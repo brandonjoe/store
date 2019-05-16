@@ -24,26 +24,26 @@ class Navbar extends Component {
                             <label for="toggle" className={classes.ham}>&#9776;</label>
                             <input type='checkbox' id='toggle' className={classes.toggle}></input>
                             <div className={classes.menu}>
-                            <Link to='/store'>
+                            <Link style={{textDecoration: "none"}} to={"/"}>
 
-                            <div className={`${classes.home} `}>
+                            <div className={`${classes.home}`}>
                             Home
                             </div>
                             </Link>  
 
-                                    <Link to='/productlist' >
-                                    <div className={`${classes.home} `}>
+                                    <Link style={{textDecoration: "none"}}  to= {"/productList"} >
+                                    <div className={`${classes.home} `} >
                                 Products
                                     </div>
                                     </Link>
 
-                            <Link to='/faq'>
+                            <Link style={{textDecoration: "none"}} to='/faq'>
 
                                 <div className={classes.home}>
                                     FAQ
                                 </div>
                             </Link>  
-                            <Link to='/contact'>
+                            <Link style={{textDecoration: "none"}} to='/contact'>
 
                                 <div className={classes.home}>
                                     Contact
@@ -54,7 +54,7 @@ class Navbar extends Component {
                             
                             
 
-                            <Link to='/cart' className={` ${classes.fullcart}`}>
+                            <Link style={{textDecoration: "none"}} to='/cart' className={` ${classes.fullcart}`}>
 
                             <div className={`${classes.cart}`}>
                                 <span className={``}>

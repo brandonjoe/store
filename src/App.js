@@ -23,12 +23,12 @@ class App extends Component {
         {/* <Navbar /> */}
     
         <Switch>
-          <Route path="/" exact component={Allstuff}/>
-          <Route path= "/productList" component={Listonly} />
-          <Route path="/detail" component={Details}/>
-          <Route path= "/cart" component={Cart}/>
-          <Route path="/faq" component={Faq} />
-          <Route path="/contact" component={ContactForm} />
+          <Route path= {"/"} exact component={Allstuff}/>
+          <Route path= {"/productList"} component={Listonly} />
+          <Route path= {process.env.PUBLIC_URL + "/details"} component={Details}/>
+          <Route path= {"/cart"} component={Cart}/>
+          <Route path= {"/faq"}  component={Faq} />
+          <Route path= {"/contact"} component={ContactForm} />
           <Route component={Default}/>
         </Switch>
 
