@@ -6,7 +6,6 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 import Select from 'react-select';
 import classes from './Details.module.css';
-import {ProductProvider} from '../context.js';
 import Product from './Product';
 import Modal2 from './Modal2';
 import Navbar from './Navbar';
