@@ -6,12 +6,12 @@ import {Link} from 'react-router-dom';
 import Select from 'react-select';
 import classes from './Modal.module.css';
 const options = [
-    {value: 1, label: "US: 1"},
-    {value: 1.25, label: "US: 1.25"},
-    {value: 1.5, label: "US: 1.5"},
-    {value: 1.75, label: "US: 1.75"},
-    {value: 2, label: "US: 2"},
-    {value: 2.25, label: "US: 2.25"},
+    { value: 1, label: "US: 1" },
+  { value: 1.25, label: "US: 1.25" },
+  { value: 1.5, label: "US: 1.5" },
+  { value: 1.75, label: "US: 1.75" },
+  { value: 2, label: "US: 2" },
+  { value: 2.25, label: "US: 2.25" }
 
 ]
 class Modal extends Component {
